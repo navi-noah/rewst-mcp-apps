@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rewst MCP Apps</title>
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --c-teal-deep: #082c2c;
+        --c-teal: #00bbb4;
+        --c-aqua: #a5dfdf;
+        --c-teal-dark: #005655;
+        --c-seafoam: #78cfcf;
+        --c-orange: #f9a100;
+        --c-amber: #fdd999;
+        --c-gray-light: #e6e6e6;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: Montserrat, Arial, sans-serif;
+        font-weight: 500;
+        color: var(--c-teal-deep);
+        background: var(--c-gray-light);
+        line-height: 1.55;
+      }
+      h1, h2, button { font-family: Poppins, Arial, sans-serif; }
+      .hero {
+        background: var(--c-teal-deep);
+        color: var(--c-aqua);
+        padding: 28px 24px 56px;
+      }
+      .wrap { max-width: 860px; margin: 0 auto; }
+      nav img { height: 36px; display: block; }
+      h1 {
+        font-size: 48px;
+        line-height: 1.1;
+        margin: 48px 0 12px;
+        color: var(--c-aqua);
+      }
+      h1 span { color: var(--c-orange); }
+      .lede { font-size: 19px; max-width: 640px; color: var(--c-seafoam); margin: 0; }
+      .url {
+        margin-top: 28px;
+        display: flex;
+        gap: 8px;
+        max-width: 620px;
+      }
+      .url code {
+        flex: 1;
+        background: rgba(165, 223, 223, 0.12);
+        border-radius: 999px;
+        padding: 12px 18px;
+        font-size: 15px;
+        color: var(--c-aqua);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      button {
+        border: 0;
+        border-radius: 999px;
+        padding: 12px 22px;
+        background: var(--c-orange);
+        color: var(--c-teal-deep);
+        font-weight: 600;
+        font-size: 15px;
+        cursor: pointer;
+      }
+      main { padding: 40px 24px 64px; max-width: 908px; }
+      section {
+        background: #fff;
+        border-radius: 16px;
+        padding: 24px 26px;
+        margin-bottom: 16px;
+      }
+      h2 { font-size: 22px; margin: 0 0 8px; }
+      .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+      .grid section { margin: 0; }
+      .eyebrow {
+        font-family: Poppins, Arial, sans-serif;
+        font-weight: 600;
+        font-size: 12px;
+        color: var(--c-teal);
+        letter-spacing: 0.04em;
+      }
+      pre {
+        background: var(--c-teal-deep);
+        color: var(--c-aqua);
+        border-radius: 12px;
+        padding: 16px 18px;
+        white-space: pre-wrap;
+        font-size: 14px;
+        margin: 12px 0 0;
+      }
+      ol { padding-left: 20px; margin: 8px 0 0; }
+      details { border-top: 1px solid var(--c-gray-light); padding: 10px 0; }
+      details:first-of-type { border-top: 0; }
+      summary { cursor: pointer; font-size: 16px; }
+      .note { font-size: 13px; color: var(--c-teal-dark); margin: 8px 0 0; }
+      li { margin-bottom: 6px; }
+      a { color: var(--c-teal-dark); }
+    </style>
+  </head>
+  <body>
+    <header class="hero">
+      <div class="wrap">
+        <nav><img src="/rewst-logo-ondark.png" alt="Rewst" /></nav>
+        <h1>Rewst, right in <span>the chat</span>.</h1>
+        <p class="lede">
+          Rewst's own MCP server lets an AI work in Rewst for you. MCP Apps put you back in the loop: real UI, right in
+          the chat, where you check the AI's work before it counts. Everything here is fake data, so go ahead and break it.
+        </p>
+        <div class="url">
+          <code id="url">/mcp</code>
+          <button id="copy">Copy</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <section>
+        <div class="eyebrow">Add it</div>
+        <h2>Point your AI client at the URL above</h2>
+        <p>Don't trust strangers on the internet, including this one. Read the source before you connect it: <a href="https://github.com/navi-noah/rewst-mcp-apps">github.com/navi-noah/rewst-mcp-apps</a></p>
+        <details open>
+          <summary><b>Claude</b> (web or desktop)</summary>
+          <ol>
+            <li>Settings, Connectors, Add custom connector.</li>
+            <li>Name it <b>Rewst MCP Apps Demo</b>, paste the URL above, leave authentication empty. If it says it couldn't check the server, choose Continue anyway.</li>
+            <li>In a new chat, turn it on from the tools menu.</li>
+          </ol>
+          <p class="note">Claude only reads a connector's tool list when it connects, so if the demo changes, remove it and add it again.</p>
+        </details>
+        <details>
+          <summary><b>ChatGPT</b> (paid plans)</summary>
+          <ol>
+            <li>Turn on developer mode: Settings, then the Plugins (formerly Connectors) section, Advanced. On Business and Enterprise an admin has to allow it first.</li>
+            <li>Add a custom MCP app named <b>Rewst MCP Apps Demo</b>, paste the URL above, and set authentication to none.</li>
+            <li>In a new chat, pick it from the plugins menu in the message box.</li>
+          </ol>
+          <p class="note">OpenAI has moved these menus around a few times this year, so the names may be slightly different for you.</p>
+        </details>
+        <details>
+          <summary><b>Microsoft 365 Copilot</b> (cards included)</summary>
+          <p>Copilot doesn't take a URL directly, so there's a ready-made agent you upload once. You need a Microsoft 365 Copilot license, and your tenant has to allow uploading custom apps (if it doesn't, a Teams admin can upload it for you).</p>
+          <ol>
+            <li><a href="/rewst-mcp-apps-copilot.zip" download>Download the agent</a> (a small zip; don't unzip it).</li>
+            <li>In Teams: Apps, Manage your apps, Upload an app, Upload a custom app. Pick the zip, then Add.</li>
+            <li>Open Microsoft 365 Copilot (in Teams or at <a href="https://m365.cloud.microsoft/chat">m365.cloud.microsoft/chat</a>), pick <b>Rewst MCP Apps Demo</b> from your agents, and try one of its starter prompts. Allow it to connect when asked.</li>
+          </ol>
+          <p class="note">Copilot doesn't fill the cards in while the AI is still typing, and it won't follow a light/dark switch until the card reloads. Everything else works. To remove it later: Apps, Manage your apps, then the trash icon next to it.</p>
+          <p class="note">Copilot Studio can connect to this server too (Tools, Add a tool, New tool, Model Context Protocol, the URL above, authentication None), but Microsoft lists cards inside Copilot Studio agents as still rolling out, so today you'll mostly get plain text there.</p>
+        </details>
+        <p>Why name it in your prompts: if you also have Rewst's real MCP server connected, the AI can't always tell which "Rewst" you mean. Saying "Rewst MCP Apps Demo" points it at this one. Asking "Rewst MCP Apps Demo, what can you see?" brings up the safety card.</p>
+        <p>The code is public: <a href="https://github.com/navi-noah/rewst-mcp-apps">github.com/navi-noah/rewst-mcp-apps</a>.</p>
+        <p>Any client that supports <a href="https://modelcontextprotocol.io/extensions/apps/overview">MCP Apps</a> will render the UI. The rest get plain text, which still works, it's just less fun.</p>
+      </section>
+
+      <div>
+        <section>
+          <div class="eyebrow">Try this first</div>
+          <h2>Review the AI's org mappings</h2>
+          <p>Ask:</p>
+          <pre>Using Rewst MCP Apps Demo, map my ConnectWise PSA companies to Rewst orgs.</pre>
+          <p>The AI does the fuzzy matching. You get a grid with its confidence on every row, fix what it got wrong, and commit. It can't commit for you, and afterward it knows exactly what you changed.</p>
+        </section>
+        <section>
+          <div class="eyebrow">Then this</div>
+          <h2>Frame a workflow before it's built</h2>
+          <p>Ask:</p>
+          <pre>Using Rewst MCP Apps Demo, sketch a Rewst workflow for offboarding a user before building anything.</pre>
+          <p>You get a diagram of the workflow first, with which integrations are set up and what you already have that covers part of it. Answer its questions in the card, and nothing gets built until you say so. Best with Rewst's own MCP server connected in the same chat.</p>
+        </section>
+      </div>
+    </main>
+
+    <script>
+      const url = `${location.origin}/mcp`;
+      document.getElementById("url").textContent = url;
+      document.getElementById("copy").onclick = async (e) => {
+        await navigator.clipboard.writeText(url);
+        e.target.textContent = "Copied";
+        setTimeout(() => (e.target.textContent = "Copy"), 1500);
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.24/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.24",
+  "version": "1.0.0",
+  "id": "3597f9f5-89e4-4a8f-bd20-6026cea23659",
+  "developer": {
+    "name": "Rewst MCP Apps Demo",
+    "websiteUrl": "{{SITE_URL}}/",
+    "privacyUrl": "{{SITE_URL}}/privacy",
+    "termsOfUseUrl": "{{SITE_URL}}/terms"
+  },
+  "name": {
+    "short": "Rewst MCP Apps Demo",
+    "full": "Rewst MCP Apps Demo"
+  },
+  "description": {
+    "short": "Review AI org mappings and plan Rewst workflows in cards",
+    "full": "A demo of MCP Apps for Rewst. The AI matches PSA companies and Microsoft tenants to Rewst orgs and you review and commit them in a card; it sketches a Rewst workflow as a diagram before anything is built; and it shows exactly what the server can see. All data is made up."
+  },
+  "icons": {
+    "color": "color.png",
+    "outline": "outline.png"
+  },
+  "accentColor": "#082C2C",
+  "composeExtensions": [],
+  "permissions": ["identity"],
+  "validDomains": [],
+  "copilotAgents": {
+    "declarativeAgents": [{ "id": "declarativeAgent", "file": "declarativeAgent.json" }]
+  }
+}

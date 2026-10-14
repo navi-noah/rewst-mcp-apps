@@ -1,0 +1,41 @@
+{
+  "name": "rewst-mcp-apps",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:views": "VIEW=mapping vite build && VIEW=frame vite build && VIEW=about vite build",
+    "build": "tsc -p tsconfig.json && tsc -p src/views/tsconfig.json && bun run build:views && bun run package:copilot",
+    "dev": "bun run build:views && wrangler dev",
+    "deploy": "bun run build && wrangler deploy",
+    "package:copilot": "bun scripts/package-copilot.ts"
+  },
+  "dependencies": {
+    "@dagrejs/dagre": "^3.1.1",
+    "@modelcontextprotocol/client": "^2",
+    "@modelcontextprotocol/ext-apps": "^2",
+    "@modelcontextprotocol/server": "^2",
+    "@xyflow/react": "^12.12.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^1.57.0",
+    "radix-ui": "^1.8.1",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "tailwind-merge": "^3.7.0",
+    "zod": "^4"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20261014.1",
+    "@fontsource/montserrat": "^5.3.0",
+    "@fontsource/poppins": "^5.3.0",
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.4",
+    "vite-plugin-singlefile": "^2.3.3",
+    "wrangler": "^4.151.0"
+  }
+}

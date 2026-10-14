@@ -1,0 +1,9 @@
+{
+  "name": "rewst-mcp-apps",
+  "main": "src/server/index.ts",
+  "compatibility_date": "2026-10-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": { "directory": "./public", "binding": "ASSETS" },
+  "rules": [{ "type": "Text", "globs": ["**/*.html"], "fallthrough": true }],
+  "observability": { "enabled": false }
+}

@@ -1,0 +1,143 @@
+@import "tailwindcss";
+
+/* Theme tokens copied from app.rewst.ai's own stylesheet (2026-10-14), same names
+   and values, so the card reads as part of Rewst rather than its marketing site. */
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-display: swap;
+  src: url(@fontsource/montserrat/files/montserrat-latin-400-normal.woff2) format("woff2");
+}
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-display: swap;
+  src: url(@fontsource/montserrat/files/montserrat-latin-500-normal.woff2) format("woff2");
+}
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-display: swap;
+  src: url(@fontsource/montserrat/files/montserrat-latin-600-normal.woff2) format("woff2");
+}
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 700;
+  font-display: swap;
+  src: url(@fontsource/montserrat/files/montserrat-latin-700-normal.woff2) format("woff2");
+}
+
+:root {
+  --background: 214 20% 96%;
+  --foreground: 0 0% 20%;
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 20%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 20%;
+  --primary: 180 71% 40%;
+  --primary-foreground: 190 60% 13%;
+  --secondary: 214 16% 90%;
+  --secondary-foreground: 0 0% 20%;
+  --muted: 0 0% 90%;
+  --muted-foreground: 0 0% 40%;
+  --accent: 252 33% 39%;
+  --accent-foreground: 0 0% 100%;
+  --success: 142 71% 45%;
+  --success-soft: 142 71% 26%;
+  --destructive: 0 84% 66%;
+  --destructive-foreground: 0 0% 100%;
+  --destructive-soft: 0 84% 42%;
+  --warning: 39 100% 49%;
+  --warning-soft: 39 100% 28%;
+  --info: 214 84% 56%;
+  --info-soft: 214 84% 40%;
+  --border: 0 0% 85%;
+  --input: 0 0% 85%;
+  --ring: 180 71% 40%;
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: 222 47% 11%;
+  --foreground: 210 40% 98%;
+  --card: 220 39% 14%;
+  --card-foreground: 210 40% 98%;
+  --popover: 220 39% 16%;
+  --popover-foreground: 210 40% 98%;
+  --primary: 180 71% 45%;
+  --primary-foreground: 190 60% 13%;
+  --secondary: 217 19% 27%;
+  --secondary-foreground: 210 40% 98%;
+  --muted: 217 19% 27%;
+  --muted-foreground: 215 16% 72%;
+  --accent: 252 33% 55%;
+  --accent-foreground: 0 0% 100%;
+  --success: 142 71% 45%;
+  --success-soft: 142 71% 66%;
+  --destructive: 0 84% 66%;
+  --destructive-foreground: 0 0% 100%;
+  --destructive-soft: 0 84% 72%;
+  --warning: 39 100% 49%;
+  --warning-soft: 39 100% 62%;
+  --info: 214 84% 56%;
+  --info-soft: 214 84% 70%;
+  --border: 217 19% 24%;
+  --input: 217 19% 27%;
+  --ring: 180 71% 45%;
+}
+
+@theme inline {
+  --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-success: hsl(var(--success));
+  --color-success-soft: hsl(var(--success-soft));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-destructive-soft: hsl(var(--destructive-soft));
+  --color-warning: hsl(var(--warning));
+  --color-warning-soft: hsl(var(--warning-soft));
+  --color-info: hsl(var(--info));
+  --color-info-soft: hsl(var(--info-soft));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html,
+  body {
+    @apply bg-card text-card-foreground font-sans antialiased;
+    margin: 0;
+  }
+}
+
+/* React Flow canvas on Rewst's own background instead of the library default */
+.react-flow {
+  --xy-background-color: hsl(var(--background));
+  --xy-controls-button-background-color: hsl(var(--card));
+  --xy-controls-button-color: hsl(var(--foreground));
+  --xy-controls-button-border-color: hsl(var(--border));
+}
